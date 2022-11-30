@@ -19,6 +19,6 @@ public class DistanceController {
 
     @GetMapping(value = "{from}/{to}")
     public Distance getDistance(@PathVariable("from") String from, @PathVariable("to") String to) {
-        return distanceService.getDistance(from, to);
+        return distanceService.getDistInfo(from, to);
     }
 }

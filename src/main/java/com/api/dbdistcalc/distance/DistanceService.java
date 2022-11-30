@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class DistanceService {
 
-    public Distance getDistance(String from, String to) {
+    public Distance getDistInfo(String from, String to) {
         Station start = StationService.findSpecificStation(from);
         Station end = StationService.findSpecificStation(to);
         int result = calculateDistance(start, end);
         return new Distance(start.getNAME(), end.getNAME(), result, "km");
     }
 
-    public static int calculateDistance(Station station1, Station station2) {
+    private static int calculateDistance(Station station1, Station station2) {
         // convert from degrees to radians for better calculation
         double lon1 = Math.toRadians(station1.getLaenge());
         double lat1 = Math.toRadians(station1.getBreite());

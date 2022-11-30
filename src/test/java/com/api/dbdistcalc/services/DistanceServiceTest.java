@@ -1,5 +1,6 @@
 package com.api.dbdistcalc.services;
 
+import com.api.dbdistcalc.distance.Distance;
 import com.api.dbdistcalc.distance.DistanceService;
 import com.api.dbdistcalc.station.Station;
 import org.junit.jupiter.api.Test;
@@ -34,7 +35,8 @@ class DistanceServiceTest {
                 "DB Station und Service AG",
                 191,
                 null);
-        int testResult = DistanceService.calculateDistance(test1, test2);
-        assertEquals(testResult, 473);
+        DistanceService distanceService = new DistanceService();
+        Distance testDist = distanceService.getDistInfo(test1.getDS100(), test2.getDS100());
+        assertEquals(testDist.getDistance(), 473);
     }
 }
