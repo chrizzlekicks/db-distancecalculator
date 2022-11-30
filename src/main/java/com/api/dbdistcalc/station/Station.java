@@ -43,12 +43,12 @@ public class Station {
         this.DS100 = DS100;
         this.IFOPT = IFOPT;
         this.NAME = NAME;
-        Verkehr = verkehr;
-        Laenge = laenge;
-        Breite = breite;
-        Betreiber_Name = betreiber_Name;
-        Betreiber_Nr = betreiber_Nr;
-        Status = status;
+        this.Verkehr = verkehr;
+        this.Laenge = laenge;
+        this.Breite = breite;
+        this.Betreiber_Name = betreiber_Name;
+        this.Betreiber_Nr = betreiber_Nr;
+        this.Status = status;
     }
 
     public Integer getEVA_NR() {
@@ -88,7 +88,7 @@ public class Station {
     }
 
     public void setVerkehr(String verkehr) {
-        Verkehr = verkehr;
+        this.Verkehr = verkehr;
     }
 
     public Double getLaenge() {
@@ -96,7 +96,7 @@ public class Station {
     }
 
     public void setLaenge(Double laenge) {
-        Laenge = laenge;
+        this.Laenge = laenge;
     }
 
     public Double getBreite() {
@@ -104,7 +104,7 @@ public class Station {
     }
 
     public void setBreite(Double breite) {
-        Breite = breite;
+        this.Breite = breite;
     }
 
     public String getBetreiber_Name() {
@@ -112,7 +112,7 @@ public class Station {
     }
 
     public void setBetreiber_Name(String betreiber_Name) {
-        Betreiber_Name = betreiber_Name;
+        this.Betreiber_Name = betreiber_Name;
     }
 
     public Integer getBetreiber_Nr() {
@@ -120,7 +120,7 @@ public class Station {
     }
 
     public void setBetreiber_Nr(Integer betreiber_Nr) {
-        Betreiber_Nr = betreiber_Nr;
+        this.Betreiber_Nr = betreiber_Nr;
     }
 
     public String getStatus() {
@@ -128,7 +128,7 @@ public class Station {
     }
 
     public void setStatus(String status) {
-        Status = status;
+        this.Status = status;
     }
 
     @Override

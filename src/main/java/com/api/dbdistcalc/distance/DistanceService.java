@@ -14,7 +14,7 @@ public class DistanceService {
         return new Distance(start.getNAME(), end.getNAME(), result, "km");
     }
 
-    private int calculateDistance(Station station1, Station station2) {
+    public static int calculateDistance(Station station1, Station station2) {
         // convert from degrees to radians for better calculation
         double lon1 = Math.toRadians(station1.getLaenge());
         double lat1 = Math.toRadians(station1.getBreite());
