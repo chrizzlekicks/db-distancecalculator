@@ -12,7 +12,7 @@ import static com.api.dbdistcalc.station.StationService.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class StationServiceTest {
+class StationServiceUnitTest {
 
     private List<Station> testStations;
 

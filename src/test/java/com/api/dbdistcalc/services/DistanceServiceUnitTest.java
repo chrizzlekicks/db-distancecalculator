@@ -3,13 +3,21 @@ package com.api.dbdistcalc.services;
 import com.api.dbdistcalc.distance.Distance;
 import com.api.dbdistcalc.distance.DistanceService;
 import com.api.dbdistcalc.station.Station;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-class DistanceServiceTest {
+class DistanceServiceUnitTest {
+
+    private DistanceService distanceService;
+
+    @BeforeEach
+    void setUp() {
+        distanceService = new DistanceService();
+    }
 
     @Test
     void testCalcDist() {
@@ -35,8 +43,7 @@ class DistanceServiceTest {
                 "DB Station und Service AG",
                 191,
                 null);
-        DistanceService distanceService = new DistanceService();
         Distance testDist = distanceService.getDistInfo(test1.getDS100(), test2.getDS100());
-        assertEquals(testDist.getDistance(), 473);
+        assertThat(testDist.getDistance()).isEqualTo(473);
     }
 }
