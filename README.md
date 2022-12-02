@@ -27,10 +27,10 @@ The endpoint accepts DS100 codes in all type of cases (lower, upper, etc). The e
 
 ```json
 {
-"from": "Frankfurt(Main)Hbf",
-"to": "Berlin Hbf",
-"distance": 423,
-"unit": "km"
+  "from": "Frankfurt(Main)Hbf",
+  "to": "Berlin Hbf",
+  "distance": 423,
+  "unit": "km"
 }
 ```
 
