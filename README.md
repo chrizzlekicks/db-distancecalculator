@@ -25,7 +25,8 @@ GET /api/v1/distance/FF/BLS
 
 The endpoint accepts DS100 codes in all type of cases (lower, upper, etc). The endpoint would return a JSON object like so:
 
-```json{
+```json
+{
 "from": "Frankfurt(Main)Hbf",
 "to": "Berlin Hbf",
 "distance": 423,
