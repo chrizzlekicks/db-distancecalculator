@@ -7,11 +7,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class DistanceService {
 
-    public Distance getDistInfo(String from, String to) {
+    public Distance getDistInfo(String from, String to) throws NullPointerException{
         Station start = StationService.findSpecificStation(from);
         Station end = StationService.findSpecificStation(to);
-        int result = calculateDistance(start, end);
-        return new Distance(start.getNAME(), end.getNAME(), result, "km");
+        if (start == null || end == null) {
+            throw new NullPointerException("could not find appropriate stations");
+        } else {
+            int result = calculateDistance(start, end);
+            return new Distance(start.getNAME(), end.getNAME(), result, "km");
+        }
+
     }
 
     private static int calculateDistance(Station station1, Station station2) {

@@ -22,17 +22,17 @@ public class StationService {
                     .withFieldAsNull(CSVReaderNullFieldIndicator.EMPTY_SEPARATORS)
                     .build()
                     .parse();
+            for (Object obj : data) {
+                Station station = (Station) obj;
+                stations.add(station);
+            }
+            return stations;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        for (Object obj : data) {
-            Station station = (Station) obj;
-            stations.add(station);
-        }
-        return stations;
     }
 
-    public static Station findSpecificStation(String ds100) {
+    public static Station findSpecificStation(String ds100) throws NullPointerException {
         String id = ds100.toUpperCase();
         List<Station> stations = StationService.readCSVAndConvertList();
         for (Station station : stations) {
